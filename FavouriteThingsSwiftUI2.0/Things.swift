@@ -11,7 +11,7 @@ import Foundation
 //We can do manully by choosing:
 //Editor > Refactor >Generate Memberwise Initializer
 //... just be sure your cursor is placed inside the name of the class.
-class Things {
+struct Things {
     
     //Properties
     var list : [Thing] = []
