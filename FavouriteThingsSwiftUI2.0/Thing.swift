@@ -14,4 +14,9 @@ struct Thing:Identifiable {
     let title : String
     let imageName : String
     let description : String
+    
+    //A sub-list of related favourite things
+    //This is an example of RECURSION
+    var relatedThings:[Thing] = []
+    
 }

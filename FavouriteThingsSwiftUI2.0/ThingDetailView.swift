@@ -12,12 +12,22 @@ struct ThingDetailView: View {
     let thingToShow: Thing
     
     var body: some View {
-        VStack{
+        ScrollView{
+            
             Image(thingToShow.imageName)
                 .resizable()
                 .scaledToFit()
             Text(thingToShow.description)
-            Spacer()
+            
+            //If there are many related things, show them
+            if thingToShow.relatedThings.count > 0{
+                List(thingToShow.relatedThings){ thing in
+                    
+                    NavigationLink(thing.title, destination:ThingDetailView(thingToShow: thing))
+                    
+                }
+            }
+    
         }
         .navigationTitle(thingToShow.title)
     }
